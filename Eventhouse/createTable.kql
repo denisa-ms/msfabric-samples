@@ -1,0 +1,14 @@
+//create tables
+.create table Stock (Date: datetime, AAPL: real, AMZN: real, GOOG: int, MSFT: real, SPY: real) 
+
+//create mappings to be used while ingesting events
+.create table Stock ingestion csv mapping "stock_csv_mapping"
+'['
+'   { "column" : "Date", "DataType":"datetime", "Properties":{"Ordinal":"0"}},'
+'   { "column" : "AAPL", "DataType":"real", "Properties":{"Ordinal":"1"}},'
+'   { "column" : "AMZN", "DataType":"real", "Properties":{"Ordinal":"2"}},'
+'   { "column" : "GOOG", "DataType":"real", "Properties":{"Ordinal":"3"}},'
+'   { "column" : "MSFT", "DataType":"real", "Properties":{"Ordinal":"4"}},'
+'   { "column" : "SPY", "DataType":"real", "Properties":{"Ordinal":"5"}}'
+']'
+
